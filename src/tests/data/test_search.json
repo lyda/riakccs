@@ -1,0 +1,7 @@
+{
+  "inputs":"code",
+  "query":[{"map":{"language":"javascript",
+  "source":"function(riakObject) {
+      var val = riakObject.values[0].data.match(/printf/g);
+      return [[riakObject.key, (val ? val.length : 0 )]];
+}"}}]}

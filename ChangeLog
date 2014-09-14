@@ -1,0 +1,6 @@
+2014-09-13
+
+Nearly all Riak API methods implemented.  However the way the pool is handled
+is terrible.  Need to look at protobuf-c-rpc and defining services.
+Then in the future need the option to support multi-inserts using
+threads.

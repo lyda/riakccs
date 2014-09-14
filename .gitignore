@@ -1,0 +1,33 @@
+# Wildcards.
+*~
+.*.swp
+*.o
+*.pb-c.[ch]
+*.lo
+# Autoconf cruft.
+autom4te.cache/
+config.log
+config.status
+libtool
+.deps/
+.dirstamp
+.libs/
+Makefile
+build-aux/config.h
+build-aux/stamp-h1
+# Binaries.
+/bin/
+/lib/
+/tests/
+# Generated docs.
+/docs/doxygen/
+/cxref/
+# Based on build instructions.
+build/
+# Coverage output
+*.gcda
+*.gcno
+/htmlcov/
+/coverage.info
+# Cscope, ctags, etc
+/cscope.out

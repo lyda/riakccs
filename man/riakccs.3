@@ -1,0 +1,91 @@
+.\" Copyright (c) 2014 by Kevin Lyda <kevin@ie.suberic.net>
+.\"
+.\" See COPYING file for this project for the full license.
+.\" See git blame for list of contributors.
+.\"
+.TH RIAKCCS 3  2014-01-10 "Yak Shavers Ltd." "Riak C API Manual"
+.SH NAME
+riak_* \- Communicate with a Riak cluster.
+.SH SYNOPSIS
+.nf
+.B #include <riakccs/api.h>
+
+Server connection functions.
+
+.BI "RiakClient *riak_server_connect(char " "*host" ", char " "*port" ", ProtobufCAllocator " "*allocator" );
+.BI "int riak_server_add(RiakClient " "*rc" ", char " "*host" ", char " "*port" );
+.BI "int riak_server_del_hp(RiakClient " "*rc" ", char " "*host" ", char " "*port" );
+.BI "int riak_servers_count(RiakClient " "*rc" );
+.BI "void riak_servers_disconnect(RiakClient " "*rc" );
+
+Riak response managment functions.
+
+.BI "void riak_response_free(RiakClient " "*rc" ", RiakResponse " "*rv" );
+.BI "const char *riak_mc2str(uint8_t " "mc" );
+
+Riak bucket operations.
+
+.BI "RiakResponse *riak_list_buckets(RiakClient " "*rc" );
+.BI "RiakResponse *riak_list_keys(RiakClient " "*rc" ", unsigned char " "*bucket" );
+.BI "RiakResponse *riak_get_bucket_props(RiakClient " "*rc" ", unsigned char " "*bucket" );
+.BI "RiakResponse *riak_set_bucket_props(RiakClient " "*rc" ", unsigned char " "*bucket" ", uint32_t " "n_val" ", int " "allow_mult" );
+
+Riak object/key operations.
+
+.BI "RiakResponse *riak_fetch_object_full(RiakClient " "*rc" ", unsigned char " "*bucket" ", unsigned char " "*key" ", uint32_t " "r" ", uint32_t " "pr" ", int " "basic_quorum" ", int " "notfound_ok" ", unsigned char " "*if_modified" ", int " "head" ", int " "deletedvclock" );
+.BI "RiakResponse *riak_store_object(RiakClient " "*rc" );
+.BI "RiakResponse *riak_delete_object(RiakClient " "*rc" );
+
+Riak query operations.
+
+.BI "RiakResponse *riak_map_reduce(RiakClient " "*rc" );
+.BI "RiakResponse *riak_secondary_indexes(RiakClient " "*rc" );
+.BI "RiakResponse *riak_search(RiakClient " "*rc" );
+
+Riak server operations.
+
+.BI "RiakResponse *riak_ping(RiakClient " "*rc" );
+.BI "RiakResponse *riak_get_client_id(RiakClient " "*rc" );
+.BI "RiakResponse *riak_set_client_id(RiakClient " "*rc" ", char *client_id" );
+.BI "RiakResponse *riak_get_server_info(RiakClient " "*rc" );
+
+.fi
+.SH DESCRIPTION
+.PP
+TODO: Discuss data types and enums.
+
+.SS "Server connection functions"
+.PP
+TODO: fill in.
+
+.SS "Riak response managment functions"
+.PP
+TODO: fill in.
+
+.SS "Riak bucket operations"
+.PP
+TODO: fill in.
+
+.SS "Riak object/key operations"
+.PP
+TODO: fill in.
+
+.SS "Riak query operations"
+.PP
+TODO: fill in.
+
+.SS "Riak server operations"
+.PP
+TODO: fill in.
+
+.SH "RETURN VALUE"
+.PP
+TODO: Cover what needs to be implemented.
+
+.SH NOTES
+.PP
+TODO: Note memory management options.
+
+.SH "SEE ALSO"
+.PP
+TODO: Google protobufs.  Riak server.

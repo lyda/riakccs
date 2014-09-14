@@ -1,0 +1,50 @@
+# Riak Cream Cheese Smearer
+
+This is a Riak library for C that will provide a highly reliable and
+performant connection to a riak cluster.  It supports multiple inserts
+and balances commits across the cluster.
+
+It is currently a work in progress.  This is an initial pass to understand
+the riak protobuf api as well as the protobuf for C compiler.  A second
+pass needs to work in the protobuf-c-rpc library.
+
+# Building the code
+
+The code is straight-forward to build. Some information on various parts.
+
+## Configure scripts
+
+Just to simplify things, the `configure` script is committed - you
+should just be able to just build the project w/o needing autoconf tools.
+However if you need to modify the build system (say you're adding a file)
+you'll need the `autoconf-archives` and `check` installed as well as
+all the standard autoconf tools. On ubuntu that's achieved by installing
+the packages with those names.
+
+To rebuild the autoconf scripts, just run `./autogen.sh` and pass it
+any args you'd want to pass to `./configure`.
+
+## Dependencies
+
+On Ubuntu you'll want to install the following packages:
+
+  * protobuf requirements: `protobuf-c-compiler` and `libprotobuf-c0-dev` .
+  * code testing stuff: `splint`, `valgrind` and `lcov`.
+
+## Special targets
+
+See `docs/index.html` for more information on these targets. If you view
+that page on your local fs (a `file:///` url) it will have links to the
+generated docs and reports.
+
+  * valgrind: Runs the tests from `make check` in valgrind to hunt for memory errors.
+  * doxygen-doc: Builds cross-reference information.
+  * splint: Runs splint over source.
+  * coverage-html: Generate test coverage info.
+
+```
+;;; Local Variables:
+;;; mode: markdown
+;;; End:
+; vim: set filetype=markdown:
+```

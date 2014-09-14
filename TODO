@@ -1,0 +1,19 @@
+# Riak C library...
+
+  * Create a logging api.
+  * Allow debugging to be switched on and off with a signal or environment variable.
+  * Document error states.
+  * Doxygen docs.
+    * Use as basis for man page(s).
+    * Figure out how to group the different API calls.
+  * riak_set_client_id probably needs to be changed to deal with
+    connection pool.  However, is it even used?
+
+## Riak command line util...
+
+  * Implement global flags:
+    * -y to auto-acknowledge expensive commands.
+  * Specifiy buckets and objects with a url scheme.
+  * Use protobuf-c-text instead of yaml for options.
+  * Implement commands:
+    * rm - a -r flag to remove all keys in a bucket.

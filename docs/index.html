@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title>Documentation and reports</title>
+    <style>
+code{
+  background-color:lightgrey;
+  border:2px solid;
+  border-color:darkgrey;
+  border-radius:5px;
+}
+
+hr{
+  width:25%;
+}
+
+hr.fancy {
+  padding:0;
+  border:none;
+  width:66%;
+  border-top:medium double #333;
+  text-align:center;
+}
+
+hr.fancy:after {
+  content:"\00a7";
+  display:inline-block;
+  position:relative;
+  top:-0.7em;
+  font-size:1.5em;
+  padding:0 0.25em;
+  background:white;
+}
+
+ul.hilight{
+  background-color:lightgrey;
+  border:2px solid;
+  border-color:darkgrey;
+  border-radius:5px;
+}
+
+.newspaper{
+-moz-column-count:3; /* Firefox */
+-webkit-column-count:3; /* Safari and Chrome */
+column-count:3;
+
+-moz-column-gap:40px; /* Firefox */
+-webkit-column-gap:40px; /* Safari and Chrome */
+column-gap:40px;
+
+-moz-column-rule:4px outset lightgrey; /* Firefox */
+-webkit-column-rule:4px outset lightgrey; /* Safari and Chrome */
+column-rule:4px outset lightgrey;
+}
+
+    </style>
+  </head>
+  <body>
+    <center><h2>Code analysis and documentation</h2></center>
+    <hr class="fancy" />
+    <div class="newspaper">
+    <b>Doc and Report Link Summary</b><p />
+    Links to the various generated docs and reports described on this page.
+    <ul class="hilight">
+      <li><a href=doxygen/html/index.html>Riak C API Docs</a>.</li>
+      <li><a href=../htmlcov/index.html>Test Coverage Reports</a>.</li>
+      <li><a href="../splint/">Splint Output Index</a>.</li>
+    </ul>
+
+    <hr />
+
+    <b>Doxygen Generated Docs</b><p />
+    <a href="http://www.stack.nl/~dimitri/doxygen/index.html">Doxygen</a>
+    is a code to documentation generator. By default in this
+    project html and man pages are generated. The man pages need to
+    be cleaned up and are then used to generate the pages you can find
+    in the <code>man/</code> directory.<p />
+
+    This page explains
+    <a href="http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html"
+      >how to mark up code</a>. It's generally quite simple.<p />
+
+    All that's needed to build the docs is the <code>doxygen</code>
+    and <code>grpahviz</code> packages available on most Linux and Unix
+    systems. Doxygen is configured with the
+    <code>docs/Doxyfile</code>.<p />
+
+    Build the docs by running
+    <code>make clean doxygen-doc &gt; /dev/null</code>. The
+    <code>clean</code> target is useful for clearing out some of the
+    dot graphs. The output on <code>stdout</code> isn't hugely useful,
+    but the output on <code>stderr</code> will note entities that you
+    haven't documented.
+
+    <hr />
+
+    <b>Coverage Report</b><p />
+    Coverage reports show how much of the code is being tested
+    and are a great way to look for new tests to write.  To build
+    the <a href=../htmlcov/index.html>reports</a> you first need to run
+    <code>./configure</code> with the <code>--enable-gcov</code> flag
+    (in addition to any other flags). Then just run <code>make
+      coverage-html</code> which will build the project, run the tests and
+    generate the html test coverage reports.<p />
+    The coverage reports are built with
+    <a href="http://ltp.sourceforge.net/coverage/lcov.php">lcov</a>
+    (which is a front end to gcc's
+    <a href="http://gcc.gnu.org/onlinedocs/gcc/Gcov.html">gcov</a>)
+    and integrated into the build system using the autoconf configs in the
+    <a href="https://launchpad.net/coverage-tutorial">coverage tutorial</a>
+    project on <a href="https://launchpad.net/">LaunchPad</a>. A nice
+    <a href="http://qualityhour.wordpress.com/2012/01/29/test-coverage-tutorial-for-cc-autotools-projects/">tutorial</a> walks through how to do this.<p />
+
+    <hr />
+
+    <b>Clang Static Analysis</b><p />
+
+    This isn't exactly a report. If
+    <a href="http://clang-analyzer.llvm.org/">clang</a>
+    is installed, <code>make analyze</code> will generate
+    a static analysis of the code. This should never show any errors.
+    If it does, they should be fixed. Build support is a spin on
+    <a href="http://blog.alexrp.com/2013/09/26/clangs-static-analyzer-and-automake/">this post</a>.
+    <hr />
+
+    <b>Splint Reports</b><p />
+    <a href="http://www.splint.org/manual/manual.html">Splint</a> is a
+    static analysis tool. It can find problematic sections of code -
+    when it works.<p />
+    The logs are generated with <code>make splint</code> with the
+    logs going into the <a href="../splint/"><code>splint/</code></a>
+    directory.
+  </div></body>
+</html>
