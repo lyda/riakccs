@@ -55,7 +55,7 @@ broken_free(void *allocator_data, void *data)
 }
 
 ProtobufCAllocator broken_allocator = {
-  broken_alloc, broken_free, NULL, 8192, NULL
+  broken_alloc, broken_free, NULL
 };
 
 START_TEST(test_riak_connect)
@@ -416,7 +416,7 @@ main(int argc, char *argv[])
   riak_port = getenv("RIAK_PORT1");
   riak_host2 = getenv("RIAK_HOST2");
   riak_port2 = getenv("RIAK_PORT2");
-  if (!riak_host || !riak_port_str || !riak_host2 || !riak_port_str2) {
+  if (!riak_host || !riak_port || !riak_host2 || !riak_port2) {
     printf("RIAK_HOST{1,2} and/or RIAK_PORT{1,2} not supplied.  Bailing.\n");
     exit(77);
   }

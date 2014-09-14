@@ -24,10 +24,14 @@ build-aux/stamp-h1
 /cxref/
 # Based on build instructions.
 build/
-# Coverage output
+# Coverage output.
 *.gcda
 *.gcno
 /htmlcov/
 /coverage.info
-# Cscope, ctags, etc
+# Cscope, ctags, etc.
 /cscope.out
+# Test output.
+src/tests/*.log
+src/tests/*.trs
+test-suite.log
