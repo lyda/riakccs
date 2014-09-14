@@ -432,7 +432,7 @@ riak_client_init(ProtobufCAllocator *allocator, int max_servers)
 
   /* Allocate RiakClient object and assign allocator. */
   if (allocator == NULL) {
-    allocator = &protobuf_c_default_allocator;
+    allocator = &pbc_sys_allocator;
   }
   rc = allocator->alloc(allocator->allocator_data, sizeof(RiakClient));
   if (!rc) {
